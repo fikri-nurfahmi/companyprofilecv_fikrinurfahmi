@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak Kami - CV Nusa Muda Karya</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   <header id="fikrinurfahmi_header">
+    <div class="fikrinurfahmi_logo_area">CV Nusa Muda Karya</div>
+    
+    <!-- Tombol Hamburger Mobile -->
+    <div class="fikrinurfahmi_menu_toggle" id="fikrinurfahmi_menu_toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Menu Navigasi -->
+    <ul class="fikrinurfahmi_nav_menu" id="fikrinurfahmi_nav_menu">
+        <li><a href="index.html" class="fikrinurfahmi_nav_link">Home</a></li>
+        <li><a href="profil.html" class="fikrinurfahmi_nav_link">Profil</a></li>
+        <li><a href="produk.html" class="fikrinurfahmi_nav_link">Produk</a></li>
+        <li><a href="katalog.html" class="fikrinurfahmi_nav_link">Katalog</a></li>
+        <li><a href="informasi.html" class="fikrinurfahmi_nav_link">Informasi</a></li>
+        <li><a href="kontak.html" class="fikrinurfahmi_nav_link">Kontak</a></li>
+        <li><a href="login.html" class="fikrinurfahmi_nav_link">Login</a></li>
+    </ul>
+</header>
+
+    <main class="fikrinurfahmi_container">
+        <div class="fikrinurfahmi_center_wrapper">
+            <h2 class="fikrinurfahmi_section_title">Hubungi Kami</h2>
+        </div>
+        
+        <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 300px; background: #fff; padding: 25px; border-radius: 8px;">
+                <h3>Form Kirim Pesan</h3>
+                <br>
+                <form id="fikrinurfahmi_contact_form">
+                    <div class="fikrinurfahmi_form_group">
+                        <label for="nama">Nama Lengkap:</label>
+                        <input type="text" id="nama" class="fikrinurfahmi_form_input" required>
+                    </div>
+                    <div class="fikrinurfahmi_form_group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" class="fikrinurfahmi_form_input" required>
+                    </div>
+                    <div class="fikrinurfahmi_form_group">
+                        <label for="subjek">Subjek Pemesanan / Pertanyaan:</label>
+                        <input type="text" id="subjek" class="fikrinurfahmi_form_input" required>
+                    </div>
+                    <div class="fikrinurfahmi_form_group">
+                        <label for="pesan">Pesan Anda:</label>
+                        <textarea id="pesan" rows="5" class="fikrinurfahmi_form_textarea" required></textarea>
+                    </div>
+                    <button type="submit" class="fikrinurfahmi_btn_submit">Kirim Pesan</button>
+                </form>
+            </div>
+
+            <div style="flex: 1; min-width: 300px; background: #fff; padding: 25px; border-radius: 8px;">
+                <h3>Kontak & Lokasi</h3>
+                <br>
+                <p><strong>Alamat:</strong> Jl. Raya Cikunir Singaparna No. 01, Kabupaten Tasikmalaya, Jawa Barat (Patokan dekat SMAN 2 Singaparna)</p>
+                <p><strong>WhatsApp Rekrutmen & Order:</strong> 0851-1736-7641</p>
+                <p><strong>Instagram:</strong> @nusamudakarya</p>
+            </div>
+        </div>
+    </main>
+
+    <footer id="fikrinurfahmi_footer">
+        <p>&copy; 2026 Fikri Nurfahmi - Tasikmalaya. All Rights Reserved.</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
