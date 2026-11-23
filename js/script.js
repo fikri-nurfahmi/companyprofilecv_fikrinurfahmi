@@ -1,48 +1,48 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Toggle Menu Navigasi Mobile (Hamburger)
-    const fikrinurfahmiToggle = document.getElementById('fikrinurfahmi_menu_toggle');
-    const fikrinurfahmiNav = document.getElementById('fikrinurfahmi_nav_menu');
-
-    if (fikrinurfahmiToggle && fikrinurfahmiNav) {
-        fikrinurfahmiToggle.addEventListener('click', () => {
-            fikrinurfahmiNav.classList.toggle('fikrinurfahmi_show');
-        });
+    const toggle = document.getElementById('fikrinurfahmi_menu_toggle');
+    const nav = document.getElementById('fikrinurfahmi_nav_menu');
+    if (toggle && nav) {
+        toggle.addEventListener('click', () => nav.classList.toggle('fikrinurfahmi_show'));
     }
 
-    // 2. Auto-Active Navbar Link Berdasarkan Halaman yang Sedang Dibuka
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('.fikrinurfahmi_nav_link');
-
-    navLinks.forEach(link => {
-        // Hapus kelas aktif bawaan dari HTML
-        link.classList.remove('fikrinurfahmi_active');
-        
-        // Ambil atribut href link
-        const linkHref = link.getAttribute('href');
-        
-        // Jika href cocok dengan halaman saat ini, tambahkan kelas aktif (oranye)
-        if (linkHref === currentPath) {
-            link.classList.add('fikrinurfahmi_active');
-        }
+    document.querySelectorAll('.fikrinurfahmi_nav_link').forEach((link) => {
+        link.classList.toggle('fikrinurfahmi_active', link.getAttribute('href') === currentPath);
     });
 
-    // 3. Validasi Form Kontak
-    const fikrinurfahmiContactForm = document.getElementById('fikrinurfahmi_contact_form');
-    if (fikrinurfahmiContactForm) {
-        fikrinurfahmiContactForm.addEventListener('submit', (e) => {
+    const contactForm = document.getElementById('fikrinurfahmi_contact_form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Pesan Anda telah berhasil terkirim ke CV Nusa Muda Karya!');
-            fikrinurfahmiContactForm.reset();
+            const nama = document.getElementById('nama').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subjek = document.getElementById('subjek').value.trim();
+            const pesan = document.getElementById('pesan').value.trim();
+
+            alert(
+                `Pesan terkirim ke CV Nusa Muda Karya!\n\n` +
+                `Nama: ${nama}\n` +
+                `Email: ${email}\n` +
+                `Subjek: ${subjek}\n` +
+                `Pesan: ${pesan}`
+            );
+            contactForm.reset();
         });
     }
 
-    // 4. Validasi Form Login
-    const fikrinurfahmiLoginForm = document.getElementById('fikrinurfahmi_login_form');
-    if (fikrinurfahmiLoginForm) {
-        fikrinurfahmiLoginForm.addEventListener('submit', (e) => {
+    const loginForm = document.getElementById('fikrinurfahmi_login_form');
+    if (loginForm) {
+        loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Login Berhasil! Selamat Datang di Dashboard internal CV Nusa Muda Karya.');
-            fikrinurfahmiLoginForm.reset();
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            alert(
+                `Login berhasil!\n\n` +
+                `Username: ${username}\n` +
+                `Password: ${password}`
+            );
+            loginForm.reset();
         });
     }
 });
